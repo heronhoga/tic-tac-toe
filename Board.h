@@ -11,8 +11,6 @@ class Board {
 
     public:
         Board();
-        Board(int boardArea); 
-
         int getArea() const;
         void displayArea() const;
 };
