@@ -25,5 +25,11 @@ int main() {
         std::cin >> mark2;
     }
 
+    player1.setSign(mark1);
+    player2.setSign(mark2);
+
+    std::cout << "Tanda player 1: " << player1.getSign() << "\n";
+    std::cout << "Tanda player 2: " << player2.getSign() << "\n";
+
     return 0;
 }
