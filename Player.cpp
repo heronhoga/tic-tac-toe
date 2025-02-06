@@ -2,7 +2,11 @@
 #include <iostream>
 #include <vector>
 
-Player::Player(char playerSign) : sign(playerSign) {}
+Player::Player() {}
+
+void Player::setSign(char markInput) {
+    sign = markInput;
+}
 
 char Player::getSign() {
     return sign;

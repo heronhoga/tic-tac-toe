@@ -7,8 +7,8 @@ class Player {
     private:
         char sign;
     public:
-        Player(char playerSign);
-
+        Player();
+        void setSign(char markInput);
         char getSign();
         void markTheBoard(char markInput, std::vector<std::vector<char>>& gameBoard, int i, int j);
 };
