@@ -5,17 +5,8 @@ Board::Board() : area(3) {
     board = std::vector<std::vector<char>>(area, std::vector<char>(area, ' '));
 }
 
-Board::Board(int boardArea) : area(boardArea) {
-    board = std::vector<std::vector<char>>(area, std::vector<char>(area, ' '));
-}
-
 int Board::getArea() const {
     return area;
-}
-
-void Board::setArea(int boardArea) {
-    area = boardArea;
-    board = std::vector<std::vector<char>>(area, std::vector<char>(area, ' '));
 }
 
 void Board::displayArea() const {

@@ -14,7 +14,6 @@ class Board {
         Board(int boardArea); 
 
         int getArea() const;
-        void setArea(int boardArea);
         void displayArea() const;
 };
 
