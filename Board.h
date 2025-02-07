@@ -7,10 +7,11 @@
 class Board {
     private:
         int area;
-        std::vector<std::vector<char>> board;
+        
 
     public:
         Board();
+        std::vector<std::vector<char>> board;
         int getArea() const;
         void displayArea() const;
 };
