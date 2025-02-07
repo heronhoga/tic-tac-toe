@@ -1,9 +1,11 @@
 #include <iostream>
 #include "Player.h"
 #include "Board.h"
+#include "Game.h"
 
 int main() {
     std::cout << "Welcome to Tic Tac Toe Game!" << std::endl;
+
 
     Board board;
     Player player1;
@@ -31,5 +33,11 @@ int main() {
     std::cout << "Tanda player 1: " << player1.getSign() << "\n";
     std::cout << "Tanda player 2: " << player2.getSign() << "\n";
 
+    std::cout << "---------- ----------" << "\n";
+    Game game1;
+    std::cout << "Status game mulai: " << game1.getGameStart() << std::endl;
+    std::cout << "Status game menang: " << game1.getGameWin() << std::endl;
+
+    // while (game1)
     return 0;
 }

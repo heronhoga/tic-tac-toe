@@ -10,6 +10,10 @@ class Game {
         bool gameWin;
     public:
         Game();
+        bool getGameStart();
+        bool getGameWin();
+        void setGameStart(bool status);
+        void setGameWin(bool status);
         void checkBoard(std::vector<std::vector<char>> board, char player1, char player2);
 };
 
