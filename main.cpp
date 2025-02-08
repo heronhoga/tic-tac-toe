@@ -41,7 +41,7 @@ int main() {
     std::cout << "Status game menang: " << game1.getGameWin() << std::endl;
 
     bool turn = true;
-    int numberSelect;
+    char numberSelect;
     while (game1.getGameWin() != true) {
         int availablePlace = 1;
         for (int i = 0; i < board.getArea(); i++)
@@ -66,6 +66,18 @@ int main() {
 
         std::cin >> numberSelect;
         std::cin.ignore();
+
+        while (int(numberSelect) < 49 || int(numberSelect) > 57) {
+            std::cout << "Pilihan tidak sesuai, mohon pilih kembali" << std::endl;
+                if (turn) {
+            std::cout << "Giliran Player 1 / " << player1.getSign() << " untuk memilih: ";
+                } else {
+            std::cout << "Giliran Player 2 / " << player2.getSign() << " untuk memilih: ";
+        }
+
+        std::cin >> numberSelect;
+        std::cin.ignore();
+        }
 
         turn = !turn;
         availablePlace = 1;
