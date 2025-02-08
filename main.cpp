@@ -6,7 +6,6 @@
 int main() {
     std::cout << "Welcome to Tic Tac Toe Game!" << std::endl;
 
-
     Board board;
     Player player1;
     Player player2;
@@ -37,12 +36,12 @@ int main() {
 
     Game game1;
 
-    std::cout << "Status game mulai: " << game1.getGameStart() << std::endl;
-    std::cout << "Status game menang: " << game1.getGameWin() << std::endl;
-
     bool turn = true;
     char numberSelect;
+
+    //in-game
     while (game1.getGameWin() != true) {
+        //available choices map
         int availablePlace = 1;
         for (int i = 0; i < board.getArea(); i++)
         {
@@ -50,14 +49,16 @@ int main() {
             {
                 if (board.board[i][j] == ' ') {
                     std::cout << availablePlace << " ";
-                    ++availablePlace;
+                } else {
+                    std::cout << "  ";
                 }
-            
+                    ++availablePlace;
             }
             std::cout << "\n";
         
         }
         
+        //player insertion
         if (turn) {
             std::cout << "Giliran Player 1 / " << player1.getSign() << " untuk memilih: ";
         } else {
@@ -79,8 +80,31 @@ int main() {
         std::cin.ignore();
         }
 
-        turn = !turn;
         availablePlace = 1;
+
+        
+
+        //player mark the board
+        for (int i = 0; i < board.getArea(); i++)
+        {
+            for (int j = 0; j < board.getArea();j++)
+            {
+                char comparedChar = '0' + availablePlace;
+                if (comparedChar == numberSelect) {
+                    if (turn) {
+                        player1.markTheBoard(player1.getSign(), board.board, i, j);
+                    } else if (!turn) {
+                        player2.markTheBoard(player2.getSign(), board.board, i, j);
+                    }
+                }
+                ++availablePlace;
+            }
+            
+        }
+        
+        board.displayArea();
+        availablePlace = 1;
+        turn = !turn;
         
     }
     return 0;

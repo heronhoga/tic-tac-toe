@@ -10,16 +10,10 @@ int Board::getArea() const {
 }
 
 void Board::displayArea() const {
-    for (int i = 0; i < area; ++i) {
-        for (int j = 0; j < area; ++j) {
-            std::cout << board[i][j];
-            if (j < area - 1) {
-                std::cout << " | ";
-            }
+    for (int i = 0; i < area; i++) {
+        for (int j = 0; j < area; j++) {
+            std::cout << board[i][j] << " ";
         }
         std::cout << std::endl;
-        if (i < area - 1) {
-            std::cout << "---+---+---" << std::endl;
-        }
     }
 }
