@@ -14,7 +14,7 @@ class Game {
         bool getGameWin();
         void setGameStart(bool status);
         void setGameWin(bool status);
-        void checkBoard(std::vector<std::vector<char>> board, char player1, char player2);
+        char checkBoard(std::vector<std::vector<char>> board, char player1, char player2);
 };
 
 #endif

@@ -103,9 +103,10 @@ int main() {
         }
         
         board.displayArea();
+        game1.checkBoard(board.board, player1.getSign(), player2.getSign());
         availablePlace = 1;
         turn = !turn;
-        
     }
+    std::cout << "Permainan selesai, pemenangnya adalah: " << game1.checkBoard(board.board, player1.getSign(), player2.getSign()) << std::endl;
     return 0;
 }
